@@ -4,9 +4,6 @@ const fs = require("fs");
 
 // Create server
 const server = http.createServer((req, res) => {
-  // Set header content type
-  //   res.setHeader("Content-Type", "text/html");
-
   // Build file path for pages
   let filePath = "./public/";
   switch (req.url) {
@@ -36,8 +33,6 @@ const server = http.createServer((req, res) => {
       res.setHeader("Content-Type", "text/html");
       break;
   }
-
-  console.log(filePath);
 
   // Read and serve file
   fs.readFile(filePath, (err, data) => {
